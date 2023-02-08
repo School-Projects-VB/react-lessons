@@ -2,12 +2,10 @@ SPACE := $(subst , ,)
 PACK = $(subst $(SPACE),,$(1))
 CMD_NOT_FOUND = $(error $(call PACK, $(1)) is required for this rule)
 
-define check_cmd
-    $(if $(shell command -v $(1)),, $(call CMD_NOT_FOUND, $(1)))
-endef
+CHECK_CMD = $(if $(shell command -v $(1)),, $(call CMD_NOT_FOUND, $(1)))
 
-$(call check_cmd, echo)
-$(call check_cmd, tput)
+$(call CHECK_CMD, echo)
+$(call CHECK_CMD, tput)
 
 ifneq ($(shell tput colors),0)
     GREEN := \e[32m
@@ -25,11 +23,11 @@ DIST := dist
 all: run
 
 $(DEPS_FOLDER):
-	$(call check_cmd, npm)
+	$(call CHECK_CMD, npm)
 	@ npm install
 
 run: $(DEPS_FOLDER)
-	$(call check_cmd, npm)
+	$(call CHECK_CMD, npm)
 	@ echo -e "$(ARROW) Running project..."
 	@ npm run dev $(NPM_FLAGS)
 	@ echo -e "$(OK) Done"
