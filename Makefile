@@ -37,6 +37,10 @@ run: $(DEPS_FOLDER)
 host: NPM_FLAGS := -- --host
 host: run
 
+build: $(DEPS_FOLDER) clean
+	$(call CHECK_CMD, npm)
+	@ npm run build
+
 .PHONY: host
 
 clean:
