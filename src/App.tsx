@@ -1,4 +1,4 @@
-import './App.css'
+import '/public/css/App.css'
 import Input from './components/Input'
 import Button from './components/Button'
 import NoteList from './components/NoteList'

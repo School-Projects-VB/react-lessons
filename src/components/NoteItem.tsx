@@ -1,4 +1,4 @@
-import '../App.css'
+import '/public/css/App.css'
 
 interface ListProperties {
     title: string,
