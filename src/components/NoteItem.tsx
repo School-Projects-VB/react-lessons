@@ -1,4 +1,4 @@
-import React from "react"
+import '../App.css'
 
 interface ListProperties {
     title: string,
