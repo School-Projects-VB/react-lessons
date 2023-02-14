@@ -1,9 +1,14 @@
 import React from "react"
 
-const NoteItem: React.FC = () => (
+interface ListProperties {
+    title: string,
+    content: string
+}
+
+const NoteItem = (props :ListProperties) => (
     <div className="NoteItem">
-        <div>TITRE</div>
-        <p>CONTENT</p>
+        <h1>{props.title}</h1>
+        <p>{props.content}</p>
     </div>
 );
 

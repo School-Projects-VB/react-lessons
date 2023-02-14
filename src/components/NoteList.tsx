@@ -3,8 +3,13 @@ import NoteItem from './NoteItem'
 
 const NoteList: React.FC = () => (
     <div className="NoteList">
-        {Array.from(Array(4)).map(() => (
-            <NoteItem />
+        {Array.from([
+            ["Prog", "Don't forget to review lessons"],
+            ["Data", "Review MongoDB operators"],
+            ["Bank", "Go to bank tuesday"],
+            ["Other", "Call uncle Ben"]
+        ]).map(([title, content]) => (
+            <NoteItem title={title} content={content} />
         ))}
     </div>
 );
