@@ -1,8 +1,7 @@
-import React from "react"
 import NoteItem from './NoteItem'
 import '/public/css/App.css'
 
-export const values = [
+const values = [
     {
         id: 1,
         title: "Prog",
@@ -25,10 +24,10 @@ export const values = [
     }
 ]
 
-const NoteList: React.FC = () => (
+const NoteList = () => (
     <div className="NoteList">
         {values.map(({id, title, content}) => (
-            <NoteItem id={id} title={title} content={content} />
+            <NoteItem key={id} title={title} content={content} />
         ))}
     </div>
 );

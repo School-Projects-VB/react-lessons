@@ -1,13 +1,12 @@
 import '/public/css/App.css'
 
 interface ListProperties {
-    id: number,
     title: string,
     content: string
 }
 
 function NoteItem(props: ListProperties) {
-    const {id, title, content} = props
+    const {title, content} = props
 
     return (
         <div className="NoteItem">
