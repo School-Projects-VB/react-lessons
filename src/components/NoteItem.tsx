@@ -1,7 +1,7 @@
 import React from "react"
 
 const NoteItem: React.FC = () => (
-    <div>
+    <div className="NoteItem">
         <div>TITRE</div>
         <p>CONTENT</p>
     </div>
