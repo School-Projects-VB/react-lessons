@@ -1,13 +1,12 @@
 import React from "react"
+import NoteItem from './NoteItem'
 
-function NoteList() {
-    let list = ["note1", "note2", "note3"]
+const NoteList: React.FC = () => (
+    <div>
+        {Array.from(Array(40)).map(() => (
+            <NoteItem />
+        ))}
+    </div>
+);
 
-    return (
-        <ul>
-            {list.map((item) => <li>{item}</li>)}
-        </ul>
-    )
-}
-
-export default NoteList
+export default NoteList;
