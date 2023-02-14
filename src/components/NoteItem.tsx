@@ -1,5 +1,3 @@
-import '/public/css/App.css'
-
 interface ListProperties {
     title: string,
     content: string

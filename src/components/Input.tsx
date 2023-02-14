@@ -1,7 +1,7 @@
 import React from "react"
 
 interface InputProperties {
-    rows: number,
+    rows: string,
     placeholder: string
 }
 

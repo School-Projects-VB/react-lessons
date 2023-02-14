@@ -1,5 +1,4 @@
 import NoteItem from './NoteItem'
-import '/public/css/App.css'
 
 const values = [
     {
