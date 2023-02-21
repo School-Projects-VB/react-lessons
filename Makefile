@@ -4,10 +4,24 @@ GREEN := \033[32m
 RESET := \033[39m
 ARROW := \033[1m\033[31m>$(GREEN)>\033[33m>$(RESET)
 
-run:
-	@ echo -e "${ARROW} Running project..."
-	@ npm run dev
+
+node_modules:
+	@ echo -e "${ARROW} Install npm dependancies..."
+	npm install
+
+
+update:
+	@ echo -e "${ARROW} Update npm dependancies..."
+	npm update
 
 	@ echo -e "[${GREEN}OK${RESET}] Done"
 
-.PHONY: run
+
+run: node_modules
+	@ echo -e "${ARROW} Running project..."
+	npm run dev
+
+	@ echo -e "[${GREEN}OK${RESET}] Done"
+
+
+.PHONY: update, run
