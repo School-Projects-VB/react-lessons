@@ -1,14 +1,51 @@
-import '/public/css/App.css'
-import Form from './components/Form'
-import NoteList from './components/NoteList'
+import 'css/App.css'
+import NotesList from 'src/components/Notes/NotesList';
+import OpenModalButton from 'src/components/OpenModalButton';
+import {useState} from 'react';
+import {Note} from 'src/types/NoteType';
 
-function App() {
-  return (
-    <div className="App">
-      <Form />
-      <NoteList />
-    </div>
-  )
-}
+const initialData: Note[] = [
+    {
+        id: '1',
+        title: 'Test 1',
+        content: 'Content 1',
+        created_date: new Date(),
+    },
+    {
+        id: '2',
+        title: 'Test 2',
+        content: 'Content 2',
+        created_date: new Date(),
+    },
+    {
+        id: '3',
+        title: 'Test 3',
+        content: 'Content 3',
+        created_date: new Date(),
+    },
+    {
+        id: '4',
+        title: 'Test 4',
+        content: 'Content 4',
+        created_date: new Date(),
+    },
+];
 
-export default App
+const App = () => {
+    const [data, setData] = useState<Note[]>(initialData);
+
+    const addData = (note: Note) => {
+        setData([...data, note]);
+    };
+
+    return (
+        <div className="App">
+            <h1>Notes App</h1>
+
+            <OpenModalButton addData={addData}/>
+            <NotesList data={data}/>
+        </div>
+    );
+};
+
+export default App;

@@ -29,11 +29,9 @@
   flex-direction: column;
   gap: 50px;
 }
-.form {
-  display: grid;
-  gap: 5px;
-}
-
+.OpenModalButton{}
+.Modal {}
+.Form {}
 .NoteList {
   display: grid;
   grid-template-columns: auto auto;
