@@ -7,7 +7,7 @@ interface Props {
 
 const NoteItem: React.FC<Props> = ({note}) => (
     <div className="NoteItem">
-        <div>{note.title}</div>
+        <h3>{note.title}</h3>
         <p>{note.content}</p>
     </div>
 );

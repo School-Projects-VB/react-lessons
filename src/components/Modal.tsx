@@ -11,17 +11,16 @@ const Modal: React.FC<PropsWithChildren<Props>> = (props) => {
     return (
         <div
             className="Modal"
-            style={{display: show ? 'block' : 'none'}}
-        >
-            <div>
-                <button
-                    className="button"
-                    onClick={() => setShow(false)}>
-                    Close
-                </button>
+            style={{display: show ? 'block' : 'none'}}>
+            <div className="ModalContent">
+                <img
+                    className="cross"
+                    src="/svg/cross.svg"
+                    alt="cross"
+                    onClick={() => setShow(false)}
+                />
                 {children}
             </div>
-
         </div>
     );
 };

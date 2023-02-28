@@ -42,33 +42,44 @@ const NoteForm: React.FC<Props> = ({addData, close}) => {
     };
 
     return (
-        <form className="Form">
-            <label htmlFor="title">Title</label>
-            <input
-                type="text"
-                id="title"
-                name="title"
-                value={title}
-                onChange={(event) => setTitle(event.target.value)}
-            />
+        <div className="Form">
+            <div className="FormContainer">
+                <h2>Create a note</h2>
+                <form className="FormContent">
+                    <div className="FormElement">
+                        <label htmlFor="title">Title</label>
+                        <input
+                            className="Input"
+                            type="text"
+                            id="title"
+                            name="title"
+                            value={title}
+                            onChange={(event) => setTitle(event.target.value)}
+                        />
+                    </div>
+                    <div className="FormElement">
+                        <label htmlFor="content">Content</label>
+                        <textarea
+                            className="Input"
+                            name="content"
+                            id="content"
+                            value={content}
+                            rows={5}
+                            onChange={(event) => setContent(event.target.value)}
+                        />
+                    </div>
+                </form>
 
-            <label htmlFor="content">Content</label>
-            <textarea
-                name="content"
-                id="content"
-                value={content}
-                onChange={(event) => setContent(event.target.value)}
-            />
-
-            <Button
-                text="Add"
-                type="submit"
-                onClick={(e) => {
-                    e.preventDefault();
-                    addNote();
-                }}
-            />
-        </form>
+                <Button
+                    text="Add"
+                    type="submit"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        addNote();
+                    }}
+                />
+            </div>
+        </div>
     );
 };
 
