@@ -22,11 +22,12 @@ body {
     min-height: 100vh;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, label {
     margin: 0;
     width: inherit;
     word-break: break-word;
     word-wrap: anywhere;
+    user-select: none;
 }
 
 @media (prefers-color-scheme: light) {
