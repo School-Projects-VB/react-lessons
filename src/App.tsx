@@ -40,7 +40,7 @@ const App = () => {
 
             {loading
                 ? (
-                    <Loading color={LoadingColor.PURPLE} />
+                    <Loading color={LoadingColor.BLUE} />
                 )
                 : <NotesList data={data} />
             }
