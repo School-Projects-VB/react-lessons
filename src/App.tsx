@@ -1,38 +1,32 @@
 import 'css/App.css'
+import { useEffect, useState } from 'react';
+import {
+    collection, CollectionReference, getDocs, query, orderBy,
+} from 'firebase/firestore';
 import NotesList from 'src/components/Notes/NotesList';
 import OpenModalButton from 'src/components/OpenModalButton';
-import {useState} from 'react';
 import {Note} from 'src/types/NoteType';
-
-const initialData: Note[] = [
-    {
-        id: '1',
-        title: 'Test 1',
-        content: 'Content 1',
-        created_date: new Date(),
-    },
-    {
-        id: '2',
-        title: 'Test 2',
-        content: 'Content 2',
-        created_date: new Date(),
-    },
-    {
-        id: '3',
-        title: 'Test 3',
-        content: 'Content 3',
-        created_date: new Date(),
-    },
-    {
-        id: '4',
-        title: 'Test 4',
-        content: 'Content 4',
-        created_date: new Date(),
-    },
-];
+import {db} from 'src/config/firebase';
+import Loading, {LoadingColor} from 'src/components/Loading';
 
 const App = () => {
-    const [data, setData] = useState<Note[]>(initialData);
+    const [data, setData] = useState<Note[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        const q = query(collection(db, 'notes') as CollectionReference<Note>, orderBy('created_date', 'desc'));
+        getDocs(q)
+            .then((querySnapshot) => {
+                setData(
+                    querySnapshot.docs.map((doc) => ({
+                        ...doc.data(),
+                        id: doc.id,
+                    })),
+                );
+            })
+            .catch((e) => console.error('ERROR', e))
+            .finally(() => setLoading(false));
+    }, []);
 
     const addData = (note: Note) => {
         setData([...data, note]);
@@ -43,7 +37,13 @@ const App = () => {
             <h1>Notes App</h1>
 
             <OpenModalButton addData={addData}/>
-            <NotesList data={data}/>
+
+            {loading
+                ? (
+                    <Loading color={LoadingColor.PURPLE} />
+                )
+                : <NotesList data={data} />
+            }
         </div>
     );
 };

@@ -14,10 +14,12 @@ interface Props {
 const NoteForm: React.FC<Props> = ({addData, close}) => {
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(false);
 
     const addNote = async () => {
         if (title.length > 0 && content.length > 0) {
             try {
+                setLoading(true);
                 const docRef = await addDoc<Note>(collection(db, 'notes') as CollectionReference<Note>, {
                     title,
                     content,
@@ -73,6 +75,7 @@ const NoteForm: React.FC<Props> = ({addData, close}) => {
                 <Button
                     text="Add"
                     type="submit"
+                    loading={loading}
                     onClick={(e) => {
                         e.preventDefault();
                         addNote();
