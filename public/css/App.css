@@ -1,3 +1,9 @@
+:root {
+    --blue: #646cff;
+    --white: #ffffff;
+    --grey: #aaaaaa;
+}
+
 #root {
     max-width: 1280px;
     margin: 0 auto;
@@ -30,7 +36,7 @@ p {
 }
 
 .button:hover {
-    border-color: #646cff;
+    border-color: var(--blue);
 }
 
 .button:focus,
@@ -101,7 +107,7 @@ p {
 }
 
 .Input:focus {
-    outline: solid 1px #646cff;
+    outline: solid 1px var(--blue);
 }
 
 .NoteList {
@@ -129,7 +135,7 @@ p {
 
 .Timestamp {
     font-size: 12px;
-    color: #aaaaaa;
+    color: var(--grey);
     text-align: left;
 }
 
@@ -139,6 +145,7 @@ p {
 
 .LoadContent {
     display: flex;
+    color: var(--grey);
     justify-content: center;
     align-items: center;
     gap: 10px;
