@@ -1,15 +1,12 @@
-import NotesList from 'src/components/Notes/NotesList';
-import OpenModalButton from 'src/components/OpenModalButton';
 import NoteProvider from "./context/NoteProvider";
 import 'css/App.css';
+import {RouterProvider} from "react-router-dom";
+import {router} from "./Router";
 
 const App = () => (
     <NoteProvider>
         <div className="App">
-            <h1>Notes App</h1>
-
-            <OpenModalButton/>
-            <NotesList/>
+            <RouterProvider router={router} />
         </div>
     </NoteProvider>
 );
