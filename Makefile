@@ -8,13 +8,6 @@ node_modules:
 	npm install
 
 
-update:
-	@ echo -e "${ARROW} Update npm dependancies..."
-	npm update
-
-	@ echo -e "[${GREEN}OK${RESET}] Done"
-
-
 run: node_modules
 	@ echo -e "${ARROW} Running project..."
 	npm run dev
@@ -22,4 +15,4 @@ run: node_modules
 	@ echo -e "[${GREEN}OK${RESET}] Done"
 
 
-.PHONY: update, run
+.PHONY: run
