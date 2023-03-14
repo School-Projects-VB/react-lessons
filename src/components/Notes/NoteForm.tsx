@@ -8,7 +8,11 @@ import Button from 'src/components/Button';
 import {NoteContext} from "../../context/NoteProvider";
 import {NoteActionType} from "../../context/NoteReducer";
 
-const NoteForm: React.FC = () => {
+interface Props {
+    close: () => void;
+}
+
+const NoteForm: React.FC<Props> = ({close}) => {
     const [, dispatch] = useContext(NoteContext);
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
@@ -47,6 +51,7 @@ const NoteForm: React.FC = () => {
     return (
         <div className="Form">
             <div className="FormContainer">
+                <h2>Create a note</h2>
                 <form className="FormContent">
                     <div className="FormElement">
                         <label htmlFor="title">Title</label>
