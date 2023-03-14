@@ -18,11 +18,6 @@ VITE_APP_ID="your_app_id"
 make run
 ```
 
-### Update dependencies
-```bash
-make update
-```
-
 
 ## Windows
 
@@ -45,9 +40,4 @@ VITE_APP_ID="your_app_id"
 ### Run project
 ```bash
 npm run dev
-```
-
-### Update dependencies
-```bash
-npm update
 ```
