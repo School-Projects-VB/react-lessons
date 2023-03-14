@@ -1,8 +1,16 @@
-# React Lessons
+# 🧬 React Lessons
+Notes App for React TypeScript Lessons
+
+### Dependencies
+- [npm](https://www.npmjs.com/)
+
+### Links
+- [Vite](http://localhost:5173/)
 
 ## Linux & MacOS
 
-### Firebase environment
+### Installation
+
 Create a file and named it `.env.local` at the root of the project
 ```dotenv
 VITE_API_KEY="your_api_key"
@@ -13,7 +21,8 @@ VITE_MESSAGING_SENDER_ID="your_messaging_sender_id"
 VITE_APP_ID="your_app_id"
 ```
 
-### Run project
+### Getting started
+Start services
 ```bash
 make run
 ```
@@ -21,23 +30,24 @@ make run
 
 ## Windows
 
-### Install dependencies
-```bash
-npm install
-```
+### Installation
+1. Install npm dependencies
+    ```bash
+    npm install
+    ```
 
-### Firebase environment
-Create a file and named it `.env.local` at the root of the project
-```dotenv
-VITE_API_KEY="your_api_key"
-VITE_AUTH_DOMAIN="your_auth_domain"
-VITE_PROJECT_ID="your_project_id"
-VITE_STORAGE_BUCKET="your_storage_bucket"
-VITE_MESSAGING_SENDER_ID="your_messaging_sender_id"
-VITE_APP_ID="your_app_id"
-```
+2. Create a file and named it `.env.local` at the root of the project
+    ```dotenv
+    VITE_API_KEY="your_api_key"
+    VITE_AUTH_DOMAIN="your_auth_domain"
+    VITE_PROJECT_ID="your_project_id"
+    VITE_STORAGE_BUCKET="your_storage_bucket"
+    VITE_MESSAGING_SENDER_ID="your_messaging_sender_id"
+    VITE_APP_ID="your_app_id"
+    ```
 
-### Run project
+### Getting started
+Start services
 ```bash
 npm run dev
 ```
